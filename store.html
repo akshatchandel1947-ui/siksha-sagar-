@@ -169,89 +169,8 @@
 </div>
 </div>
 </section>
-<!-- Store Tabs Control -->
-<div class="flex flex-col gap-lg">
-<div class="flex border-b border-outline-variant items-end gap-lg overflow-x-auto no-scrollbar">
-<button class="pb-base px-base font-headline-md text-headline-md transition-all active-tab flex items-center gap-xs whitespace-nowrap" id="tab-courses" onclick="switchTab('courses')">
-<span class="material-symbols-outlined">menu_book</span>
-                Premium Courses
-            </button>
-<button class="pb-base px-base font-headline-md text-headline-md transition-all text-on-surface-variant hover:text-primary flex items-center gap-xs whitespace-nowrap" id="tab-notes" onclick="switchTab('notes')">
-<span class="material-symbols-outlined">description</span>
-                Study Notes
-            </button>
-</div>
-<!-- Premium Courses Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="content-courses">
-<!-- Course Card 1: Mathematics -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
-<div class="h-48 w-full bg-cover bg-center" data-alt="A professional educational thumbnail for a lecture on Arithmetic Progressions, featuring mathematical formulas on a clean digital whiteboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2rTDcJm3wH2BP9FquDkQTz7JBio8mFOPZqvYhIqJP8dlwcUaH02Ayp92rcNl7c150j6Bten_JU4nQJzmo8WD4gtXObbCtCkE026dxtll_69zMJfFsgO2pKtrnQnhjhHHvYTk1PIHfpvvJ3LAZsI8sJ-dHoZYEXpx5bzQCSTTkNaqF_2n2rFjVaKJky4WAACjRIxVb3cC4crstU-Xiwp5nefFdDwg9yCpjhIXGgjJpYPXKmInmgiJc42cZ1flqyAv7YMhfUT0')"></div>
-<div class="p-md flex-1 flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Mathematics</span>
-<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 4.9</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Advanced Calculus Masterclass</h3>
-<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 12 Weeks</span>
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 2.4k Students</span>
-</div>
-<div class="mt-auto pt-md flex items-center justify-between">
-<div class="flex flex-col">
-<span class="text-label-sm text-on-surface-variant line-through">$199.99</span>
-<span class="text-headline-md font-bold text-primary">$149.99</span>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
-</div>
-</div>
-</div>
-<!-- Course Card 2: Biology -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
-<div class="h-48 w-full bg-cover bg-center" data-alt="A high-quality 3D educational animation screenshot of the Structure of an Atom, showing protons, neutrons, and electrons." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfPKLZjLTmr2gbNvyINteQZ5T6Y5mJ0bNMh25SJmqUpC1xrbVELRLigB-Z9jJwKeTVLLpkW_NOUAS6BV5NcXM9Q0Q9WCqo0Z1DDnHXS586Z7qy5_Czg1xPKywBIAFYTPqbKlQWvfRNcMKRfh3U2UdtVu52sBhfxLlf4wTBKCGvvI3SR523WN6kL5j-NxwyF0auiaAHjxVzsg_xo9OdnpzerPf60OcuYTBuo5Ijh9SjD4FExFmAPFM902OGmk_09Uy-db8asMc')"></div>
-<div class="p-md flex-1 flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Biology</span>
-<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 4.8</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Molecular Genetics Fundamentals</h3>
-<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 8 Weeks</span>
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 1.8k Students</span>
-</div>
-<div class="mt-auto pt-md flex items-center justify-between">
-<div class="flex flex-col">
-<span class="text-label-sm text-on-surface-variant line-through">$149.99</span>
-<span class="text-headline-md font-bold text-primary">$99.99</span>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
-</div>
-</div>
-</div>
-<!-- Course Card 3: Study Habits/Humanities -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
-<div class="h-48 w-full bg-cover bg-center" data-alt="An educational illustration of a student using a tablet for active recall and study habits, featuring a clean workspace." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdQ684XMXnL5k4WTZDJUY2CEvdoMhf9l4xNwM-SdnVZH4CoQ1r4-NKw6Qt5_oST7lfiDbj7LJaOJ6eCTrywrMRFPiwnRwF9rmdS2hY-_bG9NQ_DSE__pEp99Q0_Fc-Xxqee7A1hmbfFB4e29N5YkfJJuNehfy5wuM36nd8Cz2I_qWwle4rrLTJK1YqK8BP6nym4LHqtrClL4iZRl_wx9LgVVUZqklW-TxIwpQEl59QLJd_At8u4bx9BI5p0I-ofcOM0kmF9yI')"></div>
-<div class="p-md flex-1 flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Academic Excellence</span>
-<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 5.0</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Effective Study Habits Masterclass</h3>
-<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 4 Weeks</span>
-<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 5.2k Students</span>
-</div>
-<div class="mt-auto pt-md flex items-center justify-between">
-<div class="flex flex-col">
-<span class="text-label-sm text-on-surface-variant line-through">$99.99</span>
-<span class="text-headline-md font-bold text-primary">$49.99</span>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
-</div>
-</div>
-</div>
-</div>
 <!-- Study Notes List -->
-<div class="hidden flex flex-col gap-md" id="content-notes">
+<div class="flex flex-col gap-md" id="content-notes">
 <!-- Notes Featured Section -->
 <div class="mb-gutter bg-surface-container p-md rounded-xl flex flex-col md:flex-row gap-lg items-center border border-outline-variant">
 <div class="w-full md:w-64 h-48 rounded-lg overflow-hidden shrink-0">
@@ -264,60 +183,8 @@
 </div>
 </div>
 <!-- Notes Items -->
-<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
-<div class="flex items-center gap-md">
-<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-on-surface">Calculus III: Triple Integrals Summary</h4>
-<p class="text-body-md text-on-surface-variant">Includes solved problems and visual proofs. 2.4 MB</p>
-</div>
-</div>
-<div class="flex items-center gap-lg">
-<span class="text-headline-md font-bold text-secondary">$4.99</span>
-<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Download PDF
-                    </button>
-</div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
-<div class="flex items-center gap-md">
-<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-on-surface">Periodic Table Trends Cheat Sheet</h4>
-<p class="text-body-md text-on-surface-variant">Electronegativity, Radii, and Ionization Energy trends. 1.1 MB</p>
-</div>
-</div>
-<div class="flex items-center gap-lg">
-<span class="text-headline-md font-bold text-secondary">$2.99</span>
-<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Download PDF
-                    </button>
-</div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
-<div class="flex items-center gap-md">
-<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-on-surface">Microeconomics: Market Equilibrium Notes</h4>
-<p class="text-body-md text-on-surface-variant">Supply and demand curves with case studies. 3.7 MB</p>
-</div>
-</div>
-<div class="flex items-center gap-lg">
-<span class="text-headline-md font-bold text-secondary">$5.99</span>
-<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Download PDF
-                    </button>
-</div>
-</div>
+<div id="dynamic-notes-container" class="flex flex-col gap-md">
+    <div class="text-center py-10 text-slate-500 font-semibold">Loading your premium notes...</div>
 </div>
 </div>
 </main>
@@ -396,6 +263,8 @@
       });
   } catch (e) {}
 
+  import { getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
   const loginBtns = document.querySelectorAll('.login-btn');
   const provider = new GoogleAuthProvider();
 
@@ -410,5 +279,49 @@
         }
     });
   });
+
+  // Fetch Notes dynamically
+  async function loadNotes() {
+      const container = document.getElementById('dynamic-notes-container');
+      try {
+          const q = query(collection(db, "notes"), orderBy("timestamp", "desc"));
+          const snapshot = await getDocs(q);
+          
+          if (snapshot.empty) {
+              container.innerHTML = '<div class="text-center py-10 text-slate-500 font-semibold">No notes uploaded yet. Check back soon!</div>';
+              return;
+          }
+
+          let html = '';
+          snapshot.forEach(doc => {
+              const note = doc.data();
+              html += 
+              <div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
+                  <div class="flex items-center gap-md">
+                      <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center shrink-0">
+                          <span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+                      </div>
+                      <div>
+                          <h4 class="font-headline-md text-headline-md text-on-surface"> + note.title + </h4>
+                          <p class="text-body-md text-on-surface-variant"> + note.category +  • Official PDF</p>
+                      </div>
+                  </div>
+                  <div class="flex items-center gap-lg">
+                      <span class="text-headline-md font-bold text-secondary">₹ + note.price + </span>
+                      <a href=" + note.link + " target="_blank" class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
+                          <span class="material-symbols-outlined text-[18px]">download</span>
+                          Download PDF
+                      </a>
+                  </div>
+              </div>;
+          });
+          container.innerHTML = html;
+      } catch (e) {
+          console.error("Error loading notes:", e);
+          container.innerHTML = '<div class="text-center py-10 text-red-500 font-semibold">Could not load notes. Please check database connection.</div>';
+      }
+  }
+
+  loadNotes();
 </script>
 </body></html>
