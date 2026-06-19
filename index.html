@@ -134,7 +134,7 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
 </div>
-<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md px-md py-base rounded-lg transition-all active:scale-95 shadow-sm">
+<button class="login-btn bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md px-md py-base rounded-lg transition-all active:scale-95 shadow-sm flex items-center gap-1">
                 Get Started
             </button>
 </nav>
@@ -155,10 +155,10 @@
                         Empowering Karnataka's students and educators with precision-guided resources for SSLC board exams and professional teaching recruitment.
                     </p>
 <div class="flex flex-wrap gap-md mt-md">
-<button class="bg-primary text-on-primary font-label-md text-label-md px-lg py-md rounded-xl hover:bg-on-primary-fixed-variant transition-all flex items-center gap-base group">
+<a href="https://t.me/shikshasagar0" target="_blank" class="bg-primary text-on-primary font-label-md text-label-md px-lg py-md rounded-xl hover:bg-on-primary-fixed-variant transition-all flex items-center gap-base group">
                             Join Telegram
                             <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
-</button>
+</a>
 <button class="border-2 border-secondary text-secondary font-label-md text-label-md px-lg py-md rounded-xl hover:bg-secondary-container transition-all">
                             View 2026-27 Cycle
                         </button>
@@ -283,10 +283,10 @@
 <div class="w-64 h-48 rounded-xl overflow-hidden shadow-md">
 <img alt="KSEEB Class 10 study notes stack" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzV1EsuTOjYj-U1P9lLawCHIuW6YoPiYz8tCKhctybbSb0Jwu7Tc_QeTiEglxgbmIYju7VsJXxojUR3iAwA3oe6YC4QA9EqAuOxkNDZIER8w2vLfHoTTxBVPtTggGCE1wpN6Zrd4E5xAouuYoCf5ZqBAspNiwYsOqTy5j04zDgPLL0YSh5GjIh3mEv9J6p4T1HZN37ei6QeSYv0B0YnZ6tCQ6SCo0EEctMocsxiOXlQLb_WmDQ8tz3tfdRdbrsLmKWoawHHwY"/>
 </div>
-<button class="bg-secondary text-on-secondary px-lg py-md rounded-xl font-headline-md flex items-center gap-base shadow-lg hover:brightness-110 transition-all">
+<a href="https://t.me/shikshasagar0" target="_blank" class="bg-secondary text-on-secondary px-lg py-md rounded-xl font-headline-md flex items-center gap-base shadow-lg hover:brightness-110 transition-all">
 <span class="material-symbols-outlined">send</span>
                             Join Shiksha Sagar Telegram
-                        </button>
+                        </a>
 </div>
 </div>
 </div>
@@ -382,4 +382,51 @@
             });
         });
     </script>
+<!-- Firebase App -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC4iis77cX34FhF7_ubQh8hrIh6qY0MwWI",
+    authDomain: "siksha-sagar.firebaseapp.com",
+    projectId: "siksha-sagar",
+    storageBucket: "siksha-sagar.firebasestorage.app",
+    messagingSenderId: "478306986887",
+    appId: "1:478306986887:web:6d01cf15b845914fe2c122",
+    measurementId: "G-9XJL34P46H"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // Track visit to Firestore
+  try {
+      addDoc(collection(db, "visitors"), {
+          timestamp: serverTimestamp(),
+          userAgent: navigator.userAgent,
+          page: window.location.pathname
+      });
+  } catch (e) {
+      console.log("Visit tracking requires Firestore database to be created in console.");
+  }
+
+  // Handle Login Button
+  const loginBtns = document.querySelectorAll('.login-btn');
+  const provider = new GoogleAuthProvider();
+
+  onAuthStateChanged(auth, (user) => {
+    loginBtns.forEach(btn => {
+        if (user) {
+          btn.innerHTML = `<span class="material-symbols-outlined text-sm">person</span> ${user.displayName.split(' ')[0]}`;
+          btn.onclick = () => signOut(auth);
+        } else {
+          btn.innerHTML = `Get Started`;
+          btn.onclick = () => signInWithPopup(auth, provider);
+        }
+    });
+  });
+</script>
 </body></html>
