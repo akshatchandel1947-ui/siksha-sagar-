@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shiksha Sagar - Store</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-container": "#a0f399",
+                "inverse-on-surface": "#eff1f3",
+                "primary": "#006685",
+                "background": "#f7f9fb",
+                "outline": "#6f787e",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-container": "#a3abff",
+                "on-primary-fixed-variant": "#004d65",
+                "tertiary-fixed-dim": "#bdc2ff",
+                "surface-container-high": "#e6e8ea",
+                "surface": "#f7f9fb",
+                "on-secondary-container": "#217128",
+                "on-secondary-fixed-variant": "#005312",
+                "on-primary-fixed": "#001f2a",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "surface-container-low": "#f2f4f6",
+                "inverse-surface": "#2d3133",
+                "primary-fixed-dim": "#75d2fb",
+                "surface-bright": "#f7f9fb",
+                "on-surface": "#191c1e",
+                "on-primary-container": "#004a61",
+                "on-tertiary-container": "#313a93",
+                "on-primary": "#ffffff",
+                "primary-fixed": "#bfe9ff",
+                "surface-container-lowest": "#ffffff",
+                "error-container": "#ffdad6",
+                "surface-container": "#eceef0",
+                "surface-tint": "#006685",
+                "on-background": "#191c1e",
+                "outline-variant": "#bec8ce",
+                "tertiary": "#4c56af",
+                "on-secondary-fixed": "#002204",
+                "on-tertiary-fixed-variant": "#343d96",
+                "inverse-primary": "#75d2fb",
+                "primary-container": "#5ebce5",
+                "surface-container-highest": "#e0e3e5",
+                "surface-variant": "#e0e3e5",
+                "on-surface-variant": "#3f484e",
+                "on-tertiary-fixed": "#000767",
+                "tertiary-fixed": "#e0e0ff",
+                "surface-dim": "#d8dadc",
+                "secondary-fixed": "#a3f69c",
+                "secondary": "#1b6d24",
+                "secondary-fixed-dim": "#88d982"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "sm": "12px",
+                "gutter": "24px",
+                "base": "8px",
+                "margin": "32px",
+                "xs": "4px",
+                "xl": "80px",
+                "md": "24px",
+                "lg": "48px"
+            },
+            "fontFamily": {
+                "label-md": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "headline-md": ["Manrope"],
+                "headline-lg-mobile": ["Manrope"],
+                "body-md": ["Manrope"],
+                "label-sm": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            border-bottom: 2px solid #006685;
+            color: #006685;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .card-hover:hover {
+            box-shadow: 0 12px 24px -10px rgba(0, 102, 133, 0.08);
+            transform: translateY(-2px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-on-background w-full top-0 sticky z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto">
+<div class="flex items-center gap-base cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined text-primary font-headline-md">school</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Shiksha Sagar</h1>
+</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="courses.html">Paid Courses</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="store.html">Notes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 transition-all cursor-pointer">
+            Get Started
+        </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin py-lg min-h-[calc(100vh-16rem)]">
+<!-- Hero Section for Store -->
+<section class="mb-xl">
+<div class="relative rounded-xl overflow-hidden bg-primary-container p-lg md:p-xl flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1 space-y-md relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-primary-container">Academic Store</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container opacity-90 max-w-xl">
+                    Invest in your future with our premium certified courses and comprehensive study resources curated by industry experts.
+                </p>
+</div>
+<div class="hidden md:block w-1/3 relative">
+</div>
+</div>
+</section>
+<!-- Store Tabs Control -->
+<div class="flex flex-col gap-lg">
+<div class="flex border-b border-outline-variant items-end gap-lg overflow-x-auto no-scrollbar">
+<button class="pb-base px-base font-headline-md text-headline-md transition-all active-tab flex items-center gap-xs whitespace-nowrap" id="tab-courses" onclick="switchTab('courses')">
+<span class="material-symbols-outlined">menu_book</span>
+                Premium Courses
+            </button>
+<button class="pb-base px-base font-headline-md text-headline-md transition-all text-on-surface-variant hover:text-primary flex items-center gap-xs whitespace-nowrap" id="tab-notes" onclick="switchTab('notes')">
+<span class="material-symbols-outlined">description</span>
+                Study Notes
+            </button>
+</div>
+<!-- Premium Courses Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="content-courses">
+<!-- Course Card 1: Mathematics -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
+<div class="h-48 w-full bg-cover bg-center" data-alt="A professional educational thumbnail for a lecture on Arithmetic Progressions, featuring mathematical formulas on a clean digital whiteboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2rTDcJm3wH2BP9FquDkQTz7JBio8mFOPZqvYhIqJP8dlwcUaH02Ayp92rcNl7c150j6Bten_JU4nQJzmo8WD4gtXObbCtCkE026dxtll_69zMJfFsgO2pKtrnQnhjhHHvYTk1PIHfpvvJ3LAZsI8sJ-dHoZYEXpx5bzQCSTTkNaqF_2n2rFjVaKJky4WAACjRIxVb3cC4crstU-Xiwp5nefFdDwg9yCpjhIXGgjJpYPXKmInmgiJc42cZ1flqyAv7YMhfUT0')"></div>
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Mathematics</span>
+<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 4.9</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Advanced Calculus Masterclass</h3>
+<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 12 Weeks</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 2.4k Students</span>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant line-through">$199.99</span>
+<span class="text-headline-md font-bold text-primary">$149.99</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
+</div>
+</div>
+</div>
+<!-- Course Card 2: Biology -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
+<div class="h-48 w-full bg-cover bg-center" data-alt="A high-quality 3D educational animation screenshot of the Structure of an Atom, showing protons, neutrons, and electrons." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfPKLZjLTmr2gbNvyINteQZ5T6Y5mJ0bNMh25SJmqUpC1xrbVELRLigB-Z9jJwKeTVLLpkW_NOUAS6BV5NcXM9Q0Q9WCqo0Z1DDnHXS586Z7qy5_Czg1xPKywBIAFYTPqbKlQWvfRNcMKRfh3U2UdtVu52sBhfxLlf4wTBKCGvvI3SR523WN6kL5j-NxwyF0auiaAHjxVzsg_xo9OdnpzerPf60OcuYTBuo5Ijh9SjD4FExFmAPFM902OGmk_09Uy-db8asMc')"></div>
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Biology</span>
+<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 4.8</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Molecular Genetics Fundamentals</h3>
+<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 8 Weeks</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 1.8k Students</span>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant line-through">$149.99</span>
+<span class="text-headline-md font-bold text-primary">$99.99</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
+</div>
+</div>
+</div>
+<!-- Course Card 3: Study Habits/Humanities -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col card-hover transition-all duration-300">
+<div class="h-48 w-full bg-cover bg-center" data-alt="An educational illustration of a student using a tablet for active recall and study habits, featuring a clean workspace." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdQ684XMXnL5k4WTZDJUY2CEvdoMhf9l4xNwM-SdnVZH4CoQ1r4-NKw6Qt5_oST7lfiDbj7LJaOJ6eCTrywrMRFPiwnRwF9rmdS2hY-_bG9NQ_DSE__pEp99Q0_Fc-Xxqee7A1hmbfFB4e29N5YkfJJuNehfy5wuM36nd8Cz2I_qWwle4rrLTJK1YqK8BP6nym4LHqtrClL4iZRl_wx9LgVVUZqklW-TxIwpQEl59QLJd_At8u4bx9BI5p0I-ofcOM0kmF9yI')"></div>
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-base py-1 rounded-full">Academic Excellence</span>
+<span class="flex items-center text-primary font-label-md"><span class="material-symbols-outlined text-[18px]">star</span> 5.0</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Effective Study Habits Masterclass</h3>
+<div class="flex items-center gap-sm text-on-surface-variant text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">schedule</span> 4 Weeks</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">group</span> 5.2k Students</span>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant line-through">$99.99</span>
+<span class="text-headline-md font-bold text-primary">$49.99</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 active:scale-95 transition-all">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Study Notes List -->
+<div class="hidden flex flex-col gap-md" id="content-notes">
+<!-- Notes Featured Section -->
+<div class="mb-gutter bg-surface-container p-md rounded-xl flex flex-col md:flex-row gap-lg items-center border border-outline-variant">
+<div class="w-full md:w-64 h-48 rounded-lg overflow-hidden shrink-0">
+<img alt="KSEEB Study Notes Stack" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzV1EsuTOjYj-U1P9lLawCHIuW6YoPiYz8tCKhctybbSb0Jwu7Tc_QeTiEglxgbmIYju7VsJXxojUR3iAwA3oe6YC4QA9EqAuOxkNDZIER8w2vLfHoTTxBVPtTggGCE1wpN6Zrd4E5xAouuYoCf5ZqBAspNiwYsOqTy5j04zDgPLL0YSh5GjIh3mEv9J6p4T1HZN37ei6QeSYv0B0YnZ6tCQ6SCo0EEctMocsxiOXlQLb_WmDQ8tz3tfdRdbrsLmKWoawHHwY"/>
+</div>
+<div class="flex-1 space-y-sm">
+<h4 class="font-headline-md text-headline-md text-primary">Board Exam Special Packs</h4>
+<p class="text-body-md text-on-surface-variant">Complete KSEEB Class 10 and 12 comprehensive study notes prepared by academic experts. These packs include solved previous year papers and important question banks.</p>
+<button class="bg-secondary text-white px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 transition-all">Explore Board Packs</button>
+</div>
+</div>
+<!-- Notes Items -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Calculus III: Triple Integrals Summary</h4>
+<p class="text-body-md text-on-surface-variant">Includes solved problems and visual proofs. 2.4 MB</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="text-headline-md font-bold text-secondary">$4.99</span>
+<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download PDF
+                    </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Periodic Table Trends Cheat Sheet</h4>
+<p class="text-body-md text-on-surface-variant">Electronegativity, Radii, and Ionization Energy trends. 1.1 MB</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="text-headline-md font-bold text-secondary">$2.99</span>
+<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download PDF
+                    </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-md card-hover transition-all">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-error-container text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Microeconomics: Market Equilibrium Notes</h4>
+<p class="text-body-md text-on-surface-variant">Supply and demand curves with case studies. 3.7 MB</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="text-headline-md font-bold text-secondary">$5.99</span>
+<button class="border-2 border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary hover:text-white transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download PDF
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-on-background w-full border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-lg px-margin max-w-7xl mx-auto w-full">
+<div class="flex flex-col gap-xs mb-md md:mb-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">Shiksha Sagar</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant">© 2024 Shiksha Sagar. Clarity and Growth in Education.</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:underline hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:underline hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:underline hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">Contact Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:underline hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">Careers</a>
+</div>
+</div>
+</footer>
+<!-- Cart Floating Action Button -->
+<button class="fixed bottom-margin right-margin bg-primary text-on-primary w-16 h-16 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center active:scale-90 transition-all z-[60]">
+<div class="relative">
+<span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-primary">2</span>
+</div>
+</button>
+<script>
+    function switchTab(tab) {
+        const coursesTab = document.getElementById('tab-courses');
+        const notesTab = document.getElementById('tab-notes');
+        const coursesContent = document.getElementById('content-courses');
+        const notesContent = document.getElementById('content-notes');
+
+        if (tab === 'courses') {
+            coursesTab.classList.add('active-tab');
+            coursesTab.classList.remove('text-on-surface-variant');
+            notesTab.classList.remove('active-tab');
+            notesTab.classList.add('text-on-surface-variant');
+            
+            coursesContent.classList.remove('hidden');
+            notesContent.classList.add('hidden');
+        } else {
+            notesTab.classList.add('active-tab');
+            notesTab.classList.remove('text-on-surface-variant');
+            coursesTab.classList.remove('active-tab');
+            coursesTab.classList.add('text-on-surface-variant');
+
+            notesContent.classList.remove('hidden');
+            coursesContent.classList.add('hidden');
+        }
+    }
+</script>
+</body></html>
