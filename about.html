@@ -117,10 +117,12 @@
 <body class="bg-background text-on-background min-h-screen">
 <!-- TopAppBar -->
 <header class="w-full top-0 sticky z-50 bg-surface-container-lowest border-b border-outline-variant">
-<div class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto">
-<div class="flex items-center gap-sm cursor-pointer active:opacity-80 transition-all">
-<span class="material-symbols-outlined text-primary text-headline-md">school</span>
+<div class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto relative">
+<div class="flex items-center gap-base">
+<button onclick="history.back()" class="md:hidden flex items-center justify-center p-2 -ml-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<div class="flex items-center gap-sm cursor-pointer active:opacity-80 transition-all" onclick="window.location.href='index.html'">
 <span class="font-headline-md text-headline-md font-bold text-primary">Shiksha Sagar</span>
+</div>
 </div>
 <nav class="hidden md:flex gap-lg items-center">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
@@ -129,7 +131,19 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
 </nav>
+<div class="flex items-center gap-sm">
 <button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-lg hover:opacity-90 transition-soft login-btn flex items-center gap-1">Get Started</button>
+<button onclick="const m=document.getElementById('mobile-menu'); m.classList.toggle('hidden'); m.classList.toggle('flex');" class="md:hidden flex items-center justify-center p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div id="mobile-menu" class="absolute top-full left-0 w-full bg-surface-container-lowest border-b border-outline-variant shadow-lg flex-col items-center gap-4 py-6 hidden md:hidden">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="courses.html">Paid Courses</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="store.html">Notes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
+</div>
 </div>
 </header>
 <main class="max-w-7xl mx-auto px-margin pt-lg pb-xl">

@@ -135,10 +135,12 @@
 <body class="bg-background">
 <!-- TopAppBar -->
 <header class="w-full top-0 sticky z-50 bg-surface-container-lowest border-b border-outline-variant">
-<div class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto">
-<div class="flex items-center gap-base cursor-pointer">
-<span class="material-symbols-outlined text-primary" style="font-size: 32px;">school</span>
+<div class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto relative">
+<div class="flex items-center gap-base">
+<button onclick="history.back()" class="md:hidden flex items-center justify-center p-2 -ml-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<div class="flex items-center gap-base cursor-pointer" onclick="window.location.href='index.html'">
 <h1 class="font-headline-md text-headline-md font-bold text-primary">Shiksha Sagar</h1>
+</div>
 </div>
 <nav class="hidden md:flex gap-lg items-center">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
@@ -147,9 +149,21 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
 </nav>
+<div class="flex items-center gap-sm">
 <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 login-btn flex items-center gap-1">
                 Get Started
             </button>
+<button onclick="const m=document.getElementById('mobile-menu'); m.classList.toggle('hidden'); m.classList.toggle('flex');" class="md:hidden flex items-center justify-center p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div id="mobile-menu" class="absolute top-full left-0 w-full bg-surface-container-lowest border-b border-outline-variant shadow-lg flex-col items-center gap-4 py-6 hidden md:hidden">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="courses.html">Paid Courses</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="store.html">Notes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="videos.html">Videos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">About Us</a>
+</div>
 </div>
 </header>
 <main class="max-w-7xl mx-auto px-margin py-xl">
@@ -186,7 +200,7 @@
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Most Popular</span>
 </div>
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="UGC NET Preparation" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="UGC NET Preparation" src="assets/ugc_net_thumb_1781926234566.png"/>
 </div>
 <div class="p-md flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-base">UGC NET Paper 1 Complete Batch</h3>
@@ -208,7 +222,7 @@
 <!-- Card 2: HP SET Commerce -->
 <div class="course-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden flex flex-col group">
 <div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Commerce and Business" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Commerce and Business" src="assets/hp_set_commerce_thumb_1781926245680.png"/>
 </div>
 <div class="p-md flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-base">HP SET Commerce Foundation</h3>
@@ -233,7 +247,7 @@
 <div class="absolute top-4 left-4 z-10">
 <span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Trending</span>
 </div>
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Science Education" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Science Education" src="assets/ctet_science_thumb_1781926256009.png"/>
 </div>
 <div class="p-md flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-base">CTET EVS &amp; Science Mastery</h3>
@@ -255,7 +269,7 @@
 <!-- Card 4: JBT Commission -->
 <div class="course-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden flex flex-col group">
 <div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Students writing exam" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Students writing exam" src="assets/jbt_commission_thumb_1781926267380.png"/>
 </div>
 <div class="p-md flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-base">JBT Commission Target Batch</h3>

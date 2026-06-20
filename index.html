@@ -123,9 +123,11 @@
 <!-- Top Navigation Bar -->
 <header class="bg-surface-container-lowest w-full top-0 sticky z-50 border-b border-outline-variant">
 <nav class="flex justify-between items-center h-16 px-margin max-w-7xl mx-auto relative">
-<div class="flex items-center gap-base cursor-pointer active:opacity-80 transition-all">
-<span class="material-symbols-outlined text-primary font-headline-md">school</span>
+<div class="flex items-center gap-base">
+<button onclick="history.back()" class="md:hidden flex items-center justify-center p-2 -ml-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<div class="flex items-center gap-base cursor-pointer active:opacity-80 transition-all" onclick="window.location.href='index.html'">
 <span class="font-headline-md text-headline-md font-bold text-primary">Shiksha Sagar</span>
+</div>
 </div>
 <div class="hidden md:flex gap-lg items-center">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
@@ -250,20 +252,8 @@
 <h4 class="font-headline-md text-headline-md text-on-background mb-xs">Metacognitive Science</h4>
 <p class="font-label-md text-label-md text-primary">Active Recall Modules</p>
 </div>
-<!-- Secondary Small Card 2: Math -->
-<div class="md:col-span-4 bg-white rounded-xl border border-outline-variant p-md hover:shadow-md transition-all group">
-<div class="h-40 rounded-lg mb-md bg-surface-container-highest overflow-hidden">
-<img alt="Arithmetic Progressions lecture dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rTDcJm3wH2BP9FquDkQTz7JBio8mFOPZqvYhIqJP8dlwcUaH02Ayp92rcNl7c150j6Bten_JU4nQJzmo8WD4gtXObbCtCkE026dxtll_69zMJfFsgO2pKtrnQnhjhHHvYTk1PIHfpvvJ3LAZsI8sJ-dHoZYEXpx5bzQCSTTkNaqF_2n2rFjVaKJky4WAACjRIxVb3cC4crstU-Xiwp5nefFdDwg9yCpjhIXGgjJpYPXKmInmgiJc42cZ1flqyAv7YMhfUT0"/>
-</div>
-<div class="flex items-center gap-xs mb-xs">
-<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">calculate</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Math: Arithmetic Progressions</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-background mb-xs">Precision Mathematics</h4>
-<p class="font-label-md text-label-md text-primary">Visual Problem Solving</p>
-</div>
 <!-- Secondary Medium Card: Teacher Prep -->
-<div class="md:col-span-8 bg-tertiary-fixed text-on-tertiary-fixed rounded-xl p-lg flex flex-col md:flex-row gap-lg items-center relative overflow-hidden">
+<div class="md:col-span-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-xl p-lg flex flex-col md:flex-row gap-lg items-center relative overflow-hidden">
 <div class="relative z-10 flex flex-col gap-sm">
 <h3 class="font-headline-lg text-headline-lg">KARTET &amp; GPSTR Exam Prep</h3>
 <p class="font-body-md">Advanced coaching for aspiring educators in Karnataka. Bridging the gap from student to professional government teacher.</p>
